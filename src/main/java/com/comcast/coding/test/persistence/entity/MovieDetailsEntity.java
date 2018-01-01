@@ -2,13 +2,20 @@ package com.comcast.coding.test.persistence.entity;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
+import java.io.Serializable;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name = "MOVIE_DETAILS")
-public class MovieDetailsEntity {
+public class MovieDetailsEntity implements Serializable{
 
-    public static final String INTEGER="INTEGER";
+    /**
+	 *  Generated serialVersionUID
+	 */
+	private static final long serialVersionUID = 3265323433550332607L;
+
+	public static final String INTEGER="INTEGER";
 
     @Id
     @Column(name = "MOVIE_ID",columnDefinition=INTEGER)
