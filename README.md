@@ -4,7 +4,7 @@
 
 ComcastExercise is a java, springboot application which has several Rest API's exposed each having a different functionality as described below.
 
-## Getting Started
+### Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
@@ -16,35 +16,35 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Installing
 
-A step by step series of examples that tell you have to get a development env running
+A step by step series of examples that tell you how to get a development env running in local machine
 
-Clone the repo from GitHub using gitcli command,
+1. Clone the repo from GitHub using gitcli command,
 
 ```
 git clone https://github.com/likhith-3399/ComcastExercise.git
 ```
 
-Build the application
+2. Build the application
 ```
 mvn clean install (runs junit tests)
 Use mvn clean install -DskipTests (to ignore/ skip junits)
 ```
 
-Deploy/ Run the Application
+3. Deploy/ Run the Application
 ```
 Run the application, by adding the main class to Run Configuration.
 If you want to run the application from command line, run the below command.
 	mvn spring-boot:run
 ```
 
-Once, the application is started, GoTo the url below to check if its up.
+4. Once, the application is started, GoTo the url below to check if its up.
 >	URL: http://localhost:8080/service/ping
 
 
 ### Rest API's with its RequestMethod enclosed in ()
 You can use any Rest Client, I've used Postman, use this link to download https://www.getpostman.com/
 
-* Ping (GET)
+#### Ping (GET)
 >	URL: http://localhost:8080/service/ping
 ```
 Example:
@@ -53,7 +53,7 @@ Example:
    	Service is up !!! ... Running Version : 0.0.1-SNAPSHOT
 ```
 
-*	Print Fibonacci Series for given number 'N' (GET)
+####	Print Fibonacci Series for given number 'N' (GET)
 >	URL: http://localhost:8080/service/printFibonacciNumbers/{number}
 ```
 Example:
@@ -63,7 +63,7 @@ Example:
    	
 ```
 
-*	Deadlock Scenario (GET)
+####	Deadlock Scenario (GET)
 >	URL: http://localhost:8080/service/dealLockScenario/{timeOut}
 ```
 Example:
@@ -73,7 +73,7 @@ Example:
    	
 ```
 
-*	HSQLDB Insert a Record (POST)
+####	HSQLDB Insert a Record (POST)
 >	URL: http://localhost:8080/service/insertMovieDetails
 
 Insert a movie record in the Json format shown below,
@@ -85,7 +85,7 @@ Example
 }
 ```
 
-*	HSQLDB View All Records (GET)
+####	HSQLDB View All Records (GET)
 >	URL: http://localhost:8080/service/viewAllMovieDetails
 ```
 Example
@@ -101,7 +101,7 @@ Example
 
 ```
 
-*	HSQLDB View Records with Id (GET)
+####	HSQLDB View Records with Id (GET)
 >	URL: http://localhost:8080/service/viewMovieDetailsByMovieId/{movieId}
 ```
 Example:
@@ -115,7 +115,7 @@ Example:
    	
 ```
 
-*	HSQLDB View Records with Name (GET)
+####	HSQLDB View Records with Name (GET)
 >	URL: http://localhost:8080/service/viewMovieDetailsByMovieName/{movieName}
 ```
 Example:
@@ -130,7 +130,7 @@ Example:
 	]
 ```
 
-*	HSQLDB Delete Records with Name (GET)
+####	HSQLDB Delete Records with Name (GET)
 >	URL: http://localhost:8080/service/deleteSingleMovieDetails/{movieName}
 ```
 Example:
@@ -145,7 +145,7 @@ Example:
 		No Record exists with MOVIE_NAME :SuperMans.So, NO record Deleted !!!
 ```
 
-*	HSQLDB Delete All Records (GET)
+####	HSQLDB Delete All Records (GET)
 >	URL: http://localhost:8080/service/deleteAllMovieDetails
 ```
 Example:
@@ -154,7 +154,7 @@ Example:
    	All records DELETED Successfully.
 ```
 
-*	Using Rest Template to consume external Webservice (GET)
+####	Using Rest Template to consume external Webservice (GET)
 >	URL: http://localhost:8080/service/consumeExternalRestAPI
 ```
 Example:
@@ -170,18 +170,18 @@ Example:
 
 
 
-## Built With
+### Built With
 
 * [SpringBoot](https://spring.io/guides/gs/spring-boot/) - The web framework used
 * [Maven](https://maven.apache.org/) - Dependency Management
 
 
-## Versioning
+### Versioning
 
 For the versions available, see the [tags on this repository](https://github.com/likhith-3399/ComcastExercise/releases). 
 
 
-## Authors & Contributing
+### Authors & Contributing
 
 * **Likhith Matta**
 
