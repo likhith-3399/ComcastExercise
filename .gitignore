@@ -3,6 +3,8 @@
 .project
 .classpath
 .settings/
+.springBeans
+
 
 # Log file
 *.log
