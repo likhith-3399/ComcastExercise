@@ -130,5 +130,6 @@ public class MovieDetailsService {
 		}
         logger.info(" Method: deleteAllMovieDetails(), Stage: Ended");		
 	}
+	
 
 }
