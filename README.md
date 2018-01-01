@@ -41,13 +41,14 @@ If you want to run the application from command line, run the below command.
 >	URL: http://localhost:8080/service/ping
 
 
-### Rest API's with its RequestMethod enclosed in ()
+### Rest API's with its Request Method enclosed in ()
 You can use any Rest Client, I've used Postman, use this link to download https://www.getpostman.com/
 
 #### Ping (GET)
 >	URL: http://localhost:8080/service/ping
 ```
 Example:
+   Request:
 	http://localhost:8080/service/ping
    Response:
    	Service is up !!! ... Running Version : 0.0.1-SNAPSHOT
@@ -57,6 +58,7 @@ Example:
 >	URL: http://localhost:8080/service/printFibonacciNumbers/{number}
 ```
 Example:
+   Request:
 	http://localhost:8080/service/printFibonacciNumbers/15
    Response:
    	[0,1,1,2,3,5,8,13,21,34,55,89,144,233,377,610]
@@ -67,6 +69,7 @@ Example:
 >	URL: http://localhost:8080/service/dealLockScenario/{timeOut}
 ```
 Example:
+   Request:
 	http://localhost:8080/service/ping
    Response:
    	
@@ -78,19 +81,25 @@ Example:
 
 Insert a movie record in the Json format shown below,
 ```
-Example
-{
-	"movieName": "SuperMan",
-	"movieRating": "3"
-}
+Example:
+   Request:
+	URL: http://localhost:8080/service/insertMovieDetails
+	BODY:	{
+			"movieName": "SuperMan",
+			"movieRating": "3"
+		}
+   Respomse:
+   	Record Successfully Created for movie :SuperMan
 ```
 
 ####	HSQLDB View All Records (GET)
 >	URL: http://localhost:8080/service/viewAllMovieDetails
 ```
 Example
-	http://localhost:8080/service/viewAllMovieDetails/
-	Response:
+   Request:
+	URL: http://localhost:8080/service/viewAllMovieDetails/
+   
+   Response:
 	[
 	    {
 		"id": 1,
@@ -105,8 +114,10 @@ Example
 >	URL: http://localhost:8080/service/viewMovieDetailsByMovieId/{movieId}
 ```
 Example:
-	http://localhost:8080/service/viewMovieDetailsByMovieId/1
-   Response:
+    Request:
+	 URL: http://localhost:8080/service/viewMovieDetailsByMovieId/1
+    
+    Response:
    	{
     	"id": 1,
     	"movieName": "SuperMan",
@@ -119,8 +130,10 @@ Example:
 >	URL: http://localhost:8080/service/viewMovieDetailsByMovieName/{movieName}
 ```
 Example:
-	http://localhost:8080/service/viewMovieDetailsByMovieName/SuperMan
-   Response:
+    Request:
+	 URL: http://localhost:8080/service/viewMovieDetailsByMovieName/SuperMan
+    
+    Response:
    	[
     		[
         		1,
@@ -134,8 +147,10 @@ Example:
 >	URL: http://localhost:8080/service/deleteSingleMovieDetails/{movieName}
 ```
 Example:
-	http://localhost:8080/service/deleteSingleMovieDetails/SuperMan
-
+    Request:
+	 URL: http://localhost:8080/service/deleteSingleMovieDetails/SuperMan
+    
+    Response:
 	If the Movie Name passed exists in HSQLDB the,
 	  Response:
 		Record with MOVIE_NAME :SuperMan, DELETED.
@@ -149,8 +164,10 @@ Example:
 >	URL: http://localhost:8080/service/deleteAllMovieDetails
 ```
 Example:
-	http://localhost:8080/service/deleteAllMovieDetails
-   Response:
+    Request:
+	 URL: http://localhost:8080/service/deleteAllMovieDetails
+   
+    Response:
    	All records DELETED Successfully.
 ```
 
@@ -158,8 +175,9 @@ Example:
 >	URL: http://localhost:8080/service/consumeExternalRestAPI
 ```
 Example:
-	http://localhost:8080/service/consumeExternalRestAPI
-   Response:
+    Request:
+	 URL: http://localhost:8080/service/consumeExternalRestAPI
+    Response:
    	{
     "userId": 1,
     "id": 1,
@@ -172,7 +190,7 @@ Example:
 
 ### Built With
 
-* [SpringBoot](https://spring.io/guides/gs/spring-boot/) - The web framework used
+* [SpringBoot](https://spring.io/guides/gs/spring-boot/) - The Web framework
 * [Maven](https://maven.apache.org/) - Dependency Management
 
 
