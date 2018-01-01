@@ -27,7 +27,7 @@ git clone https://github.com/likhith-3399/ComcastExercise.git
 2. Build the application
 ```
 mvn clean install (runs junit tests)
-Use mvn clean install -DskipTests (to ignore/ skip junits)
+mvn clean install -DskipTests (to ignore/ skip junits)
 ```
 
 3. Deploy/ Run the Application
@@ -54,6 +54,7 @@ Example:
    	Service is up !!! ... Running Version : 0.0.1-SNAPSHOT
 ```
 
+
 ####	Print Fibonacci Series for given number 'N' (GET)
 >	URL: http://localhost:8080/service/printFibonacciNumbers/{number}
 ```
@@ -65,18 +66,20 @@ Example:
    	
 ```
 
+
 ####	Deadlock Scenario (GET)
 >	URL: http://localhost:8080/service/dealLockScenario/{timeOut}
 ```
 Example:
    Request:
-	http://localhost:8080/service/ping
+	http://localhost:8080/service/dealLockScenario/5000
    Response:
    	
    	
 ```
 
-####	HSQLDB Insert a Record (POST)
+
+####	Insert a Record (POST)
 >	URL: http://localhost:8080/service/insertMovieDetails
 
 Insert a movie record in the Json format shown below,
@@ -92,7 +95,8 @@ Example:
    	Record Successfully Created for movie :SuperMan
 ```
 
-####	HSQLDB View All Records (GET)
+
+####	View All Records (GET)
 >	URL: http://localhost:8080/service/viewAllMovieDetails
 ```
 Example
@@ -110,7 +114,8 @@ Example
 
 ```
 
-####	HSQLDB View Records with Id (GET)
+
+####	View Records with Id (GET)
 >	URL: http://localhost:8080/service/viewMovieDetailsByMovieId/{movieId}
 ```
 Example:
@@ -126,7 +131,8 @@ Example:
    	
 ```
 
-####	HSQLDB View Records with Name (GET)
+
+####	View Records with Name (GET)
 >	URL: http://localhost:8080/service/viewMovieDetailsByMovieName/{movieName}
 ```
 Example:
@@ -143,7 +149,8 @@ Example:
 	]
 ```
 
-####	HSQLDB Delete Records with Name (GET)
+
+####	Delete Records with Name (GET)
 >	URL: http://localhost:8080/service/deleteSingleMovieDetails/{movieName}
 ```
 Example:
@@ -160,7 +167,8 @@ Example:
 		No Record exists with MOVIE_NAME :SuperMans.So, NO record Deleted !!!
 ```
 
-####	HSQLDB Delete All Records (GET)
+
+####	Delete All Records (GET)
 >	URL: http://localhost:8080/service/deleteAllMovieDetails
 ```
 Example:
@@ -170,6 +178,7 @@ Example:
     Response:
    	All records DELETED Successfully.
 ```
+
 
 ####	Using Rest Template to consume external Webservice (GET)
 >	URL: http://localhost:8080/service/consumeExternalRestAPI
