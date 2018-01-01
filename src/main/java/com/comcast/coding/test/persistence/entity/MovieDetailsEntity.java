@@ -26,7 +26,7 @@ public class MovieDetailsEntity implements Serializable{
     private String movieName;
 
     @Column(name = "MOVIE_RATING", nullable = false)
-    private int movieRating;
+    private Float movieRating;
 
     public Integer getId() {
         return id;
@@ -44,11 +44,11 @@ public class MovieDetailsEntity implements Serializable{
         this.movieName = movieName;
     }
 
-    public int getMovieRating() {
+    public Float getMovieRating() {
         return movieRating;
     }
 
-    public void setMovieRating(int movieRating) {
+    public void setMovieRating(Float movieRating) {
         this.movieRating = movieRating;
     }
 
