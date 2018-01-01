@@ -158,13 +158,11 @@ Example:
 	 URL: http://localhost:8080/service/deleteSingleMovieDetails/SuperMan
     
     Response:
-	If the Movie Name passed exists in HSQLDB the,
-	  Response:
-		Record with MOVIE_NAME :SuperMan, DELETED.
+	Record with MOVIE_NAME :SuperMan, DELETED.
+		-If the Movie Name passed exists in HSQLDB the,	
 		
-	If the Movie Name passed doesn't exist in HSQLDB the,
-	  Response:
-		No Record exists with MOVIE_NAME :SuperMans.So, NO record Deleted !!!
+	No Record exists with MOVIE_NAME :SuperMans.So, NO record Deleted !!!
+		-If the Movie Name passed doesn't exist in HSQLDB the,	
 ```
 
 
