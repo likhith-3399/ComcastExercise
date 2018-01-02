@@ -73,17 +73,15 @@ public class AppControllerTest {
 		.andExpect(MockMvcResultMatchers.status().is(200));	}
 
 	@Test
-	@Ignore
 	public void testInsertMovieDetails() throws Exception {
 		
-		mockMvc.perform(MockMvcRequestBuilders.post("/service/insertMovieDetails"))
-		.andExpect(MockMvcResultMatchers.status().is(200));
-		
-		/*Mockito.when(movieDetailsService.insertMovieDetails(Mockito.any(MovieDetailsEntity.class))).thenReturn("Inception");
-		MvcResult result = mockMvc.perform(MockMvcRequestBuilders.post("/service/insertMovieDetails")).andReturn();
-		MockHttpServletResponse response = result.getResponse();
-		System.out.println(result.getResponse());
-		assertEquals(HttpStatus.CREATED.value(), response.getStatus());*/
+		mockMvc.perform(MockMvcRequestBuilders.post("/service/insertMovieDetails")
+				.contentType(MediaType.APPLICATION_JSON)
+	            .content("{\n" + 
+	            		"	\"movieName\": \"nu\",\n" + 
+	            		"	\"movieRating\": \"3\"\n" + 
+	            		"}"))
+				.andExpect(MockMvcResultMatchers.status().is(201));
 	}
 
 	@Test
