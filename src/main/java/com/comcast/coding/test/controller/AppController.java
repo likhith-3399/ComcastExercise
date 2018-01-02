@@ -80,9 +80,15 @@ public class AppController {
 	@RequestMapping(value = "/dealLockScenario/{timeOut}", method = RequestMethod.GET)
 	public @ResponseBody ResponseEntity<String> dealLockScenario(@PathVariable("timeOut") int timeOut) {
 		logger.info(" Method: dealLockScenario(), Stage: Started");
-		deadLockScenario.createDealLockScenario(timeOut);
+		String message = null;
+		try {
+			message = DeadLockScenario.createDealLockScenario(timeOut);
+		} catch (InterruptedException e) {
+			logger.error("Error while creating Thread deadlock");
+			throw new RuntimeException("Exception while creating DeadLock, ",e);
+		}
 		logger.info(" Method: dealLockScenario(), Stage: Ended");
-		return new ResponseEntity<String>("", HttpStatus.OK);
+		return new ResponseEntity<String>(message, HttpStatus.OK);
 	}
 
 	/*

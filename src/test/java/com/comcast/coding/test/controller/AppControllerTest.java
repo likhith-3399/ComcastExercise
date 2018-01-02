@@ -65,12 +65,6 @@ public class AppControllerTest {
 		
 		mockMvc.perform(MockMvcRequestBuilders.get("/service/printFibonacciNumbers/5"))
 		.andExpect(MockMvcResultMatchers.status().is(200));
-		
-		System.out.println(MockMvcResultMatchers.class.toString());
-		
-//		.andExpect(MockMvcResultMatchers.jsonPath("$",()()));
-//		.andExpect(MockMvcResultMatchers.content().);	
-		
 	}
 
 	@Test
@@ -111,22 +105,23 @@ public class AppControllerTest {
 
 	@Test
 	public void testViewMovieDetailsByMovieName() throws Exception {
-		mockMvc.perform(MockMvcRequestBuilders.get("/service/viewMovieDetailsByMovieName/Inception"))
-		.andExpect(MockMvcResultMatchers.status().is(302));	
+		MvcResult result = mockMvc.perform(MockMvcRequestBuilders.get("/service/viewMovieDetailsByMovieName/Inception")).andReturn();
+		MockHttpServletResponse response = result.getResponse();
+		assertEquals(HttpStatus.FOUND.value(), response.getStatus());
 	}
 
 	@Test
 	public void testDeleteSingleMovieDetails() throws Exception {
-		mockMvc.perform(MockMvcRequestBuilders.get("/service/deleteSingleMovieDetails/Inception"))
-		.andExpect(MockMvcResultMatchers.status().is(200));	
-		
+		MvcResult result = mockMvc.perform(MockMvcRequestBuilders.get("/service/deleteSingleMovieDetails/Inception")).andReturn();
+		MockHttpServletResponse response = result.getResponse();
+		assertEquals(HttpStatus.OK.value(), response.getStatus());
 	}
 
 	@Test
 	public void testDeleteAllMovieDetails() throws Exception {
-		mockMvc.perform(MockMvcRequestBuilders.get("/service/deleteAllMovieDetails"))
-		.andExpect(MockMvcResultMatchers.status().is(200));	
-		
+		MvcResult result = mockMvc.perform(MockMvcRequestBuilders.get("/service/deleteAllMovieDetails")).andReturn();
+		MockHttpServletResponse response = result.getResponse();
+		assertEquals(HttpStatus.OK.value(), response.getStatus());	
 	}
 
 	@Test
