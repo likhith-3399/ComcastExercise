@@ -131,17 +131,11 @@ public class AppControllerTest {
 
 	@Test
 	public void testConsumeExternalRestAPI() throws Exception {
-		
-		String responseMessage = "{\"userId\":1,\"id\":1,\"title\":\"sunt aut facere repellat provident occaecati excepturi optio reprehenderit\",\"body\":\"quia et suscipit\\nsuscipit recusandae consequuntur expedita et cum\\nreprehenderit molestiae ut ut quas totam\\nnostrum rerum est autem sunt rem eveniet architecto\"}[]";
-		
-//		Mockito.when(restTemplate.getForObject(Mockito.any(URI.class), Mockito.any(Post.class))).thenReturn(prepareMockDataList());
-
+		String responseMessage = "{\"userId\":1,\"id\":1,\"title\":\"sunt aut facere repellat provident occaecati excepturi optio reprehenderit\",\"body\":\"quia et suscipit\\nsuscipit recusandae consequuntur expedita et cum\\nreprehenderit molestiae ut ut quas totam\\nnostrum rerum est autem sunt rem eveniet architecto\"}";
 		MvcResult result = mockMvc.perform(MockMvcRequestBuilders.get("/service/consumeExternalRestAPI")).andReturn();
 		MockHttpServletResponse response = result.getResponse();
 		assertEquals(HttpStatus.OK.value(), response.getStatus());
 		assertEquals(responseMessage, result.getResponse().getContentAsString());
-
-
 	}
 	
 	
