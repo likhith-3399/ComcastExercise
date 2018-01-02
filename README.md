@@ -72,9 +72,9 @@ Example:
 ```
 Example:
    Request:
-	http://localhost:8080/service/dealLockScenario/5000
+	http://localhost:8080/service/dealLockScenario/20000
    Response:
-   	
+   	Thread One Status:TERMINATED.....Thread Two Status:TERMINATED
    	
 ```
 
