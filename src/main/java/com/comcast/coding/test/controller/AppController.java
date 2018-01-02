@@ -23,6 +23,12 @@ import com.comcast.coding.test.utilitys.DeadLockScenario;
 import com.comcast.coding.test.utilitys.RestTemplateScenario;
 import com.comcast.coding.test.utilitys.Utils;
 
+/**
+ * Controller class where all the Rest API's are configured
+ * 
+ * @author likhithkumarmatta
+ *
+ */
 @RequestMapping("/service")
 @RestController
 public class AppController {
@@ -85,9 +91,9 @@ public class AppController {
 	@RequestMapping(value = "/insertMovieDetails", method = RequestMethod.POST)
 	public @ResponseBody ResponseEntity<String> insertMovieDetails(@RequestBody MovieDetailsEntity entity) {
 		logger.info(" Method: insertMovieDetails(), Stage: Started");
-		movieDetailsService.insertMovieDetails(entity);
+		String movieName = movieDetailsService.insertMovieDetails(entity);
 		logger.info(" Method: insertMovieDetails(), Stage: Ended");
-		return new ResponseEntity<String>("Record Successfully Created for movie :" + entity.getMovieName(),
+		return new ResponseEntity<String>("Record Successfully Created for movie :" + movieName,
 				HttpStatus.CREATED);
 	}
 
@@ -95,11 +101,11 @@ public class AppController {
 	 * Method to view all tuples in the MOVIE_DETAILS table
 	 */
 	@RequestMapping(value = "/viewAllMovieDetails", method = RequestMethod.GET)
-	public @ResponseBody List<MovieDetailsEntity> viewAllMovieDetails() {
+	public @ResponseBody ResponseEntity<List<MovieDetailsEntity>> viewAllMovieDetails() {
 		logger.info(" Method: viewAllMovieDetails(), Stage: Started");
 		List<MovieDetailsEntity> movieList = movieDetailsService.showAllMovieDetails();
 		logger.info(" Method: viewAllMovieDetails(), Stage: Ended");
-		return movieList;
+		return new ResponseEntity<List<MovieDetailsEntity>>(movieList, HttpStatus.OK);
 	}
 
 	/*
@@ -111,7 +117,7 @@ public class AppController {
 		logger.info(" Method: viewMovieDetailsByMovieId(), Stage: Started");
 		Optional<MovieDetailsEntity> movieList = movieDetailsService.showMovieDetailsById(movieId);
 		logger.info(" Method: viewMovieDetailsByMovieId(), Stage: Ended");
-		return new ResponseEntity<Optional<MovieDetailsEntity>>(movieList, HttpStatus.CREATED);
+		return new ResponseEntity<Optional<MovieDetailsEntity>>(movieList, HttpStatus.OK);
 	}
 
 	/*
@@ -134,7 +140,7 @@ public class AppController {
 		logger.info(" Method: deleteSingleMovieDetails(), Stage: Started");
 		String message = movieDetailsService.deleteSingleMovieDetails(movieName);
 		logger.info(" Method: deleteSingleMovieDetails(), Stage: Ended");
-		return new ResponseEntity<String>(message, HttpStatus.FOUND);
+		return new ResponseEntity<String>(message, HttpStatus.OK);
 	}
 
 	/*
@@ -158,13 +164,5 @@ public class AppController {
 		logger.info(" Method: consumeExternalRestAPI(), Stage: Ended");
 		return new ResponseEntity<Post>(message, HttpStatus.OK);
 	}
-	
-	@RequestMapping("/*")
-    public String home(){
-        return "<center>\r\n" + 
-        		"    <h1> 404 - Page Not Found !!!</h1>\r\n" + 
-        		"    <h3> ************** SORRY ! THE PAGE YOU ARE LOOKING FOR IS NOT AVAILABLE*************</h3>\r\n" + 
-        		"</center>";
-    }
 
 }

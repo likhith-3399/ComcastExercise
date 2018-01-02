@@ -2,6 +2,12 @@ package com.comcast.coding.test.common;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+/**
+ * POJO
+ * 
+ * @author likhithkumarmatta
+ *
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Post {
 

@@ -14,6 +14,12 @@ import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+/**
+ * Java Persistence API Context Configuration Class
+ * 
+ * @author likhithkumarmatta
+ *
+ */
 @Configuration
 @EnableJpaRepositories("com.comcast.coding.test.persistence.repositories")
 @EnableTransactionManagement

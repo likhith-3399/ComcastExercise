@@ -6,6 +6,12 @@ import java.io.Serializable;
 
 import javax.persistence.*;
 
+/**
+ * Entity class
+ * 
+ * @author likhithkumarmatta
+ *
+ */
 @Entity
 @Table(name = "MOVIE_DETAILS")
 public class MovieDetailsEntity implements Serializable{
